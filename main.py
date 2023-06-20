@@ -9,8 +9,6 @@ def sigmoid(x):
 def sigmoid_prime(x):
     return sigmoid(x)*(1-sigmoid(x))
 
-numpy.random.seed(71)
-
 class Neurons:
     def __init__(self, sizes):
         self.num_layer = len(sizes)
