@@ -37,7 +37,6 @@ class Neurons:
         delta, a_list, sum_list = self.forward_pass(input, y)
         nabla_w = [np.zeros(b.shape) for b in self.w]
         nabla_b = [np.zeros(a.shape) for a in self.biases]
-        nabla_b[-1][0] = delta
         nabla_w[-1] = np.dot(delta, np.reshape(a_list[-2], (1, len(a_list[-2]))))
         nabla_b[-1] = np.array(delta)
         for layer in range(2, self.num_layer):
