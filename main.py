@@ -30,7 +30,7 @@ class Neurons:
         sum_list.append(np.dot(self.w[-1], a) + self.biases[-1])
         y_hat = sigmoid(sum_list[-1])
         a_list.append(y_hat)
-        delta = (y - y_hat) * sigmoid_prime(sum_list[-1])
+        delta = (y - y_hat)**2 * sigmoid_prime(sum_list[-1])
         return delta[0][0], a_list, sum_list
 
     def backprop(self, input, y):
